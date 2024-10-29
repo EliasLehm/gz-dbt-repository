@@ -1,9 +1,11 @@
-
 SELECT
-date_date
-,orders_id
-,products_id
-,revenue
-,quantity
+stg_raw__sales.*
 ,CAST(purchse_price as INT64) as purchse_price
-FROM {{ ref('int_sales_margin') }}
+,products_id
+FROM {{ ref('stg_raw__product') }}
+JOIN {{ ref('stg_raw__sales') }}
+ON stg_raw__sales.pdt_id = stg_raw__product.products_id
+
+
+
+
