@@ -46,5 +46,5 @@ sources:
           - name: log_cost
             description: some cost
           - name: ship_cost
-            description: how much the shipping cost isversion
+            description: how much the shipping cost is version
  
