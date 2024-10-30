@@ -52,20 +52,36 @@ sources:
         identifier: raw_gz_adwords
         description: adwords of Greenweez
         columns:
-          - name: date_date
-          - name: paid_sources
+          - name: "(date_date||'-'||campaign_key)"
+            tests:
+              - unique
+              - not_null
 
 
       - name: bing
         identifier: raw_gz_bing
         description: ads on bing
+        columns:
+           - name: "(date_date||'-'||campaign_key)"
+             tests:
+               - unique
+                - not_null
       - name: criteo
         identifier: raw_gz_criteo
         description: ads on criteo
+        columns:
+            - name: "(date_date||'-'||campaign_key)"
+              tests:
+              - unique
+              - not_null
       - name: facebook
         identifier: raw_gz_facebook
         description: ads on facebook
-        
+        columns:
+          - name: "(date_date||'-'||campaign_key)"
+            tests:
+              - unique
+                - not_null
 
       
       
